@@ -110,13 +110,4 @@ React will open on `http://localhost:3000`
 
 ---
 
-## Screenshots
-
-> App running at `http://localhost:3000`
-
-- Live price updates as sliders are adjusted
-- 5-tab panel: Breakdown · Boost Value · EMI · Market · Areas
-
----
-
 *SkillCraft Technology · Machine Learning Internship · June 2026*
