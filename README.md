@@ -2,7 +2,7 @@
 
 **SkillCraft Technology | Machine Learning Internship | Task 1**
 
-A full-stack web application that predicts house sale prices using a Linear Regression model trained on the Ames Housing Dataset.
+A full-stack web application that predicts house sale prices using a Linear Regression model trained on the Ames Housing Dataset. Built with a React frontend and Flask REST API backend.
 
 ---
 
@@ -20,47 +20,57 @@ A full-stack web application that predicts house sale prices using a Linear Regr
 ## Project Structure
 
 ```
-SCT_ML_1_webapp/
+SCT_ML_1/
 ├── backend/
 │   ├── app.py          # Flask API — trains model & serves predictions
 │   └── train.csv       # Ames Housing training dataset
-└── frontend/
-    ├── public/
-    │   └── index.html
-    ├── src/
-    │   ├── App.js      # Main React component
-    │   ├── App.css     # Styles
-    │   └── index.js    # Entry point
-    └── package.json
+├── frontend/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── App.js      # Main React component
+│   │   ├── App.css     # Styles
+│   │   └── index.js    # Entry point
+│   └── package.json
+├── .gitignore
+└── README.md
 ```
 
 ---
 
 ## Features
 
-- Interactive sliders for property inputs (living area, basement, bedrooms, bathrooms)
-- Real-time predicted house price display
-- Model performance stats (R², MAE)
-- Feature importance bar chart
-- Property summary card
+- 🎚️ **Interactive sliders** — adjust living area, basement, bedrooms, and bathrooms
+- ⚡ **Live price prediction** — updates instantly as you move sliders (no button needed)
+- 📊 **Model stats** — R² accuracy and MAE displayed at the top
+- 💡 **Price Breakdown** — live bars showing each feature's ₹ contribution to the current price
+- 🚀 **Boost Value** — smart tips showing how much value each improvement adds (e.g. +100 sq ft → +₹X)
+- 🏦 **EMI Estimator** — mortgage calculator with down payment, interest rate, and tenure sliders
+- 📈 **Market Distribution** — histogram of dataset prices with your property highlighted
+- 🏘️ **Neighbourhood Comparison** — top 10 neighbourhoods by average price
+- 🎯 **Gauge** — shows how your property compares vs the dataset average
+- 💰 **Price in INR** — all prices displayed in Indian Rupees (₹)
 
 ---
 
 ## Model Details
 
 **Features used:**
-- `GrLivArea` — Above-ground living area (sq ft)
-- `TotalBsmtSF` — Total basement area (sq ft)
-- `BedroomAbvGr` — Bedrooms above grade
-- `FullBath` — Full bathrooms above grade
-- `HalfBath` — Half bathrooms above grade
+| Column | Description |
+|--------|-------------|
+| `GrLivArea` | Above-ground living area (sq ft) |
+| `TotalBsmtSF` | Total basement area (sq ft) |
+| `BedroomAbvGr` | Bedrooms above grade |
+| `FullBath` | Full bathrooms above grade |
+| `HalfBath` | Half bathrooms above grade |
 
-**Performance (Validation Set — 20%):**
+**Target:** `SalePrice` (converted to INR at ₹83.5/USD)
+
+**Performance (Validation Set — 20% of 1,460 samples):**
 | Metric | Value |
 |--------|-------|
 | R² Score | 72.50% |
-| MAE | $30,693 |
-| RMSE | $45,929 |
+| MAE | ₹25,62,865 |
 
 ---
 
@@ -80,19 +90,32 @@ Flask will start on `http://localhost:5000`
 
 ```bash
 cd frontend
-npm install
+npm install --legacy-peer-deps
 npm start
 ```
 
 React will open on `http://localhost:3000`
 
-> Make sure both are running simultaneously.
+> ⚠️ Both terminals must stay running simultaneously.
 
 ---
 
 ## Dataset
 
 [Kaggle — House Prices: Advanced Regression Techniques](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data)
+
+- Training samples: 1,460
+- Features: 81 columns
+- Target: SalePrice
+
+---
+
+## Screenshots
+
+> App running at `http://localhost:3000`
+
+- Live price updates as sliders are adjusted
+- 5-tab panel: Breakdown · Boost Value · EMI · Market · Areas
 
 ---
 
